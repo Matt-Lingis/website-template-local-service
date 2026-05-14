@@ -302,3 +302,68 @@ footer { background-color: var(--brand-dark); color: var(--white); border-top: 4
         overflow-wrap: anywhere;
     }
 }
+
+.hero { overflow: hidden; }
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border: 1px solid rgba(251, 191, 36, 0.34);
+    border-radius: 12px;
+    pointer-events: none;
+}
+
+.hero-content,
+.hero-copy {
+    min-width: 0;
+}
+
+.service-card,
+.review-card,
+.footer-form {
+    position: relative;
+}
+
+.service-card::before,
+.review-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 4px;
+    background: var(--brand-accent);
+}
+
+.split-section {
+    position: relative;
+}
+
+.split-section::before {
+    content: "";
+    position: absolute;
+    inset: 8% auto auto -3%;
+    width: 160px;
+    height: 160px;
+    background:
+        linear-gradient(90deg, rgba(15, 23, 42, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+    background-size: 18px 18px;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow: visible;
+    }
+
+    .nav-links a {
+        flex: 0 1 auto;
+    }
+
+    .hero::after {
+        inset: 14px;
+    }
+}
